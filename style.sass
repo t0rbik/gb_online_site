@@ -1,5 +1,38 @@
 $siteColor: #F16D7F
 
+@keyframes bounce-top
+    0%
+        opacity: 1
+
+    24%
+        opacity: 1
+
+    40%
+        transform: translateY(-24px)
+        animation-timing-function: ease-in
+
+    65%
+        transform: translateY(-12px)
+        animation-timing-function: ease-in
+
+    82%
+        transform: translateY(-6px)
+        animation-timing-function: ease-in
+
+    93%
+        transform: translateY(-4px)
+        animation-timing-function: ease-in
+    25%,
+    55%,
+    75%,
+    87%
+        transform: translateY(0px)
+        animation-timing-function: ease-out
+    100%
+        transform: translateY(0px)
+        animation-timing-function: ease-out
+        opacity: 1
+
 *
     margin: 0
     padding: 0
@@ -134,6 +167,7 @@ a
     &__carousel
         justify-content: center
         display: flex
+        transition: all 0.3s
         &-box
             display: flex
             gap: 5*8px
@@ -155,6 +189,7 @@ a
         color: #F26376
         padding: 15px 39px
         background: none
+        transition: all 0.3s
         &:hover
             cursor: pointer
             background-color: $siteColor
@@ -169,7 +204,6 @@ a
     width: 360px
     background-color: #F8F8F8
     box-sizing: border-box
-
     &__info
         display: flex
         flex-direction: column
@@ -205,32 +239,32 @@ a
         line-height: 19px
         color: $siteColor
 
-.product:hover .product__img
-    filter: brightness(0.4)
-
-.product:hover .product__add-to-cart
-    display: flex
-
-.product__add-to-cart
-    width: 139px
-    height: 44px
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 17px
-    color: #FFFFFF
-    display: none
-    position: absolute
-    top: 188px
-    left: 111px
-    border: 1px solid #FFFFFF
-    flex-direction: row
-    align-items: center
-    gap: 11px
-    justify-content: center
-
-    &:hover
-        box-shadow: 0 0 5px #FFFFFF
+    &__img
+        transition: all 0.3s
+    &:hover .product__img
+        filter: brightness(0.4)
+    &:hover .product__add-to-cart
+        display: flex
+    &__add-to-cart
+        width: 139px
+        height: 44px
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #FFFFFF
+        display: none
+        position: absolute
+        top: 188px
+        left: 111px
+        border: 1px solid #FFFFFF
+        flex-direction: row
+        align-items: center
+        gap: 11px
+        justify-content: center
+        transition: box-shadow 0.3s
+        &:hover
+            box-shadow: 0 0 5px #FFFFFF
 
 .advantages
     background-color: #222224
@@ -376,10 +410,9 @@ a
     padding: 0.5em
     background-color: #FFFFFF
     display: block
-
+    transition: all 0.3s
     &:hover
         background-color: $siteColor
-
         & i
             color: #FFFFFF
 
@@ -411,6 +444,7 @@ a
             font-size: 14px
             line-height: 17px
             color: #636363
+            transition: color 0.3s
             &:hover
                 color: $siteColor
         &__content:not(:last-child):after
@@ -455,6 +489,7 @@ a
         font-size: 14px
         line-height: 17px
         color: #6F6E6E
+        transition: color 0.3s
         &:hover
             color: $siteColor
     &__details
@@ -614,6 +649,7 @@ a
         align-items: center
         justify-content: center
         margin-top: 48px
+        transition: all 0.1s
         &:hover
             cursor: pointer
             background-color: $siteColor
@@ -630,6 +666,7 @@ a
         font-size: 14px
         line-height: 17px
         color: #6F6E6E
+        transition: all 0.1s
         &:hover
             color: $siteColor
             cursor: pointer
@@ -681,3 +718,179 @@ a
 .product-container
     display: flex
     justify-content: center
+
+.cart-content
+    padding-top: 96px
+    padding-bottom: 128px
+    display: flex
+    justify-content: space-between
+    gap: 128px
+    &__buttons
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: space-between
+        margin-top: 32px
+    &__buttons__reset
+        padding: 16px 40px
+        font-style: normal
+        font-weight: 300
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        border: 1px solid #A4A4A4
+        background: #FFFFFF
+        transition: color 0.3s
+        transition: background 0.3s
+        &:hover
+            cursor: pointer
+            color: #ffffff
+            background: $siteColor
+    &__buttons__continue-shopping
+        padding: 16px 40px
+        font-style: normal
+        font-weight: 300
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        border: 1px solid #A4A4A4
+        transition: color 0.3s
+        transition: background 0.3s
+        &:hover
+            cursor: pointer
+            color: #ffffff
+            background: $siteColor
+    &__products
+        display: flex
+        flex-direction: column
+        gap: 40px
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 57px
+        width: 360px
+        padding-top: 17px
+        &__total-money
+            background: #F5F3F3
+            padding: 39px 42px 42px 44px
+            text-align: end
+            &__button-checkout
+                font-style: normal
+                font-weight: 300
+                font-size: 16px
+                line-height: 19px
+                color: #FFFFFF
+                background: $siteColor
+                border: none
+                padding-top: 16px
+                padding-bottom: 16px
+                width: 273px
+                transition: translateY 0.5s
+                transition: box-shadow 0.5s
+                &:hover
+                    cursor: pointer
+                    transform: translateY(1px)
+                    box-shadow: 1px 1px 10px 1px $siteColor
+
+            &__total
+                font-style: normal
+                font-weight: 300
+                font-size: 16px
+                line-height: 19px
+                color: #222222
+                &-span
+                    margin-left: 24px
+            &__subtotal
+                font-style: normal
+                font-weight: 400
+                font-size: 11px
+                line-height: 13px
+                color: #4A4A4A
+                margin-bottom: 12px
+                &-span
+                    margin-left: 24px
+            &__line
+                margin-top: 21px
+                margin-bottom: 17px
+                border-top: 1px solid #E2E2E2
+        &__quote-get
+            font-style: normal
+            font-weight: 300
+            font-size: 11px
+            line-height: 13px
+            color: #4A4A4A
+            padding: 10px 14px 12px 15px
+            background: #FFFFFF
+            border: 1px solid #A4A4A4
+            width: 106px
+            margin-top: 3px
+            transition: color 0.3s
+            transition: background 0.3s
+            &:hover
+                cursor: pointer
+                color: #ffffff
+                background: $siteColor
+        &__quote
+            display: flex
+            flex-direction: column
+            gap: 20px
+            min-height: 272px
+            &__heading
+                font-style: normal
+                font-weight: 300
+                font-size: 16px
+                line-height: 19px
+                color: #222222
+            &__inputs
+                border: 1px solid #A4A4A4
+                padding-top: 13px
+                padding-bottom: 16px
+                padding-left: 17px
+                &::placeholder
+                    font-style: normal
+                    font-weight: 300
+                    font-size: 13px
+                    line-height: 16px
+                    color: #222222
+
+.button__bounce-top
+    animation: bounce-top 1.2s cubic-bezier(.215,.61,.355,1.000) 15s both
+
+.product-cart
+    display: flex
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13)
+    position: relative
+    min-width: 652px
+    &__delete-sign
+        position: absolute
+        top: 28px
+        right: 22px
+        &:hover path
+            fill: red
+    &__description
+        padding: 22px 97px 62px 31px
+        width: 100%
+        &__quantity-amount
+            display: inline-block
+            padding: 1px 16px 2px 16px
+            margin-left: 24px
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            line-height: 22px
+            color: #656565
+            border: 1px solid #EAEAEA
+        &__header
+            font-style: normal
+            font-weight: 400
+            font-size: 24px
+            line-height: 29px
+            color: #222222
+            margin-bottom: 42px
+        &__text
+            font-style: normal
+            font-weight: 400
+            font-size: 22px
+            line-height: 26px
+            color: #575757
