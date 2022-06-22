@@ -57,8 +57,8 @@ a
     flex-direction: row
     align-items: center
     justify-content: space-between
-    min-height: 75px
-
+    height: 75px
+    position: relative
     &__left
         display: flex
         flex-direction: row
@@ -70,7 +70,61 @@ a
         flex-direction: row
         align-items: center
         gap: 33px
+        &__menu-label:hover
+            cursor: pointer
 
+.menu-box
+    z-index: 10
+    position: absolute
+    top: 75px
+    right: -232px
+    transform: scale(0)
+    transition: all 0.3s
+    padding: 32px
+    box-sizing: border-box
+    width: 232px
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    &__heading
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        margin-bottom: 24px
+    &__title
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: $siteColor
+    &__list
+        list-style-type: none
+        gap: 11px
+        display: flex
+        flex-direction: column
+        padding-top: 12px
+    &__list li
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #6F6E6E
+        padding-left: 21px
+        transition: color 0.3s
+        & a:hover
+            color: $siteColor
+    &__category
+        gap: 20px
+        display: flex
+        flex-direction: column
+    &__checkbox
+        position: absolute
+        left: -5555555px
+        visibility: hidden
+    &__checkbox:checked ~ .menu-box
+        right: 0
+        transform: scale(1)
 .main-info
     padding-left: calc(50% - 800px)
     padding-right: calc(50% - 800px)
@@ -844,9 +898,7 @@ a
                 color: #222222
             &__inputs
                 border: 1px solid #A4A4A4
-                padding-top: 13px
-                padding-bottom: 16px
-                padding-left: 17px
+                padding: 13px 16px 16px 17px
                 &::placeholder
                     font-style: normal
                     font-weight: 300
@@ -881,6 +933,19 @@ a
             line-height: 22px
             color: #656565
             border: 1px solid #EAEAEA
+            max-width: 22px
+            text-align: center
+            &::-webkit-outer-spin-button
+                appearance: none
+                margin: 0
+                -webkit-appearance: none
+                -moz-appearance: textfield
+            &::-webkit-inner-spin-button
+                appearance: none
+                margin: 0
+                -webkit-appearance: none
+                -moz-appearance: textfield
+
         &__header
             font-style: normal
             font-weight: 400
@@ -888,9 +953,109 @@ a
             line-height: 29px
             color: #222222
             margin-bottom: 42px
+            display: inline-block
         &__text
             font-style: normal
             font-weight: 400
             font-size: 22px
             line-height: 26px
             color: #575757
+.registration-content
+    display: flex
+    padding-top: 64px
+    padding-bottom: 96px
+    &__form-content
+        &__input
+            border: 1px solid #A4A4A4
+            background: #FFFFFF
+            padding: 13px 17px 16px 17px
+            &::placeholder
+                font-style: normal
+                font-weight: 300
+                font-size: 13px
+                line-height: 16px
+                color: #B1B1B1
+            &__radio
+                width: 17px
+                height: 17px
+                border: 1px solid #A4A4A4
+
+        &__details
+            display: flex
+            flex-direction: column
+            gap: 20px
+            &__password-description
+                font-style: normal
+                font-weight: 300
+                font-size: 13px
+                line-height: 16px
+                color: #B1B1B1
+                margin-top: 15px
+            &__heading
+                font-style: normal
+                font-weight: 300
+                font-size: 16px
+                line-height: 19px
+                color: #222222
+            &__radio-selectors
+                display: flex
+                gap: 20px
+                margin-top: 31px
+                margin-bottom: 33px
+                &__box
+                    display: flex
+                    align-items: center
+                &__selector
+                    font-style: normal
+                    font-weight: 300
+                    font-size: 11px
+                    line-height: 13px
+                    color: #000000
+                    margin-left: 10px
+        &__button
+            margin-top: 39px
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+            color: #FFFFFF
+            background: $siteColor
+            border: none
+            padding-top: 16px
+            padding-bottom: 16px
+            width: 167px
+            transition: translateY 0.5s
+            transition: box-shadow 0.5s
+            &:hover
+                cursor: pointer
+                transform: translateY(1px)
+                box-shadow: 1px 1px 10px 1px $siteColor
+    &__text
+        margin-left: 128px
+        &__header
+            font-style: normal
+            font-weight: 300
+            font-size: 24px
+            line-height: 29px
+            color: #000000
+            margin-bottom: 22px
+        &__description
+            font-style: normal
+            font-weight: 300
+            font-size: 24px
+            line-height: 29px
+            color: #000000
+            margin-bottom: 21px
+        &__list
+            display: flex
+            flex-direction: column
+            gap: 16px
+            list-style-position: inside
+            list-style-image: url('./img/list-marker.svg')
+            & li
+                padding-left: 22px
+                font-style: normal
+                font-weight: 300
+                font-size: 24px
+                line-height: 29px
+                color: #000000
