@@ -39,6 +39,14 @@ $siteColor: #F16D7F
 
 body
     font-family: 'Lato', sans-serif
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+.top
+    flex-grow: 1
+    position: relative
+    overflow: hidden
 
 img
     max-width: 100%
@@ -58,7 +66,6 @@ a
     align-items: center
     justify-content: space-between
     height: 75px
-    position: relative
     &__left
         display: flex
         flex-direction: row
@@ -78,8 +85,7 @@ a
     position: absolute
     top: 75px
     right: -232px
-    transform: scale(0)
-    transition: all 0.3s
+    transition: right 0.3s
     padding: 32px
     box-sizing: border-box
     width: 232px
@@ -124,7 +130,6 @@ a
         visibility: hidden
     &__checkbox:checked ~ .menu-box
         right: 0
-        transform: scale(1)
 .main-info
     padding-left: calc(50% - 800px)
     padding-right: calc(50% - 800px)
@@ -338,7 +343,7 @@ a
         &__heading
             font-style: normal
             font-weight: 400
-            font-size: 19.96px
+            font-size: 20px
             line-height: 24px
             color: #FBFBFB
             margin-top: 28px
@@ -347,7 +352,7 @@ a
         &__description
             font-style: normal
             font-weight: 300
-            font-size: 13.972px
+            font-size: 14px
             line-height: 17px
             text-align: center
             color: #FBFBFB
@@ -358,7 +363,7 @@ a
     background-repeat: no-repeat
     background-image: url(./img/subscribe-background.jpg)
     background-size: cover
-    background-position: center
+    background-position: bottom
     display: flex
     flex-direction: row
     flex-wrap: wrap
@@ -829,6 +834,8 @@ a
             background: #F5F3F3
             padding: 39px 42px 42px 44px
             text-align: end
+            box-sizing: border-box
+            margin-top: 39px
             &__button-checkout
                 font-style: normal
                 font-weight: 300
@@ -964,6 +971,9 @@ a
     display: flex
     padding-top: 64px
     padding-bottom: 96px
+    &__list-text
+        &_margin-left
+            padding-left: 22px
     &__form-content
         &__input
             border: 1px solid #A4A4A4
@@ -1053,9 +1063,12 @@ a
             list-style-position: inside
             list-style-image: url('./img/list-marker.svg')
             & li
-                padding-left: 22px
                 font-style: normal
                 font-weight: 300
                 font-size: 24px
                 line-height: 29px
                 color: #000000
+                &::marker
+                    margin-right: 22px
+
+@import 'tablet'
