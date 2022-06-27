@@ -743,18 +743,19 @@ a {
   cursor: pointer;
   color: #F16D7F;
 }
-.filter-sort .sort {
+
+.sort {
   position: relative;
   padding: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-.filter-sort[open] {
+.sort[open] {
   background: none;
   box-shadow: none;
 }
-.filter-sort__sizes {
+.sort__sizes {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -762,7 +763,7 @@ a {
   color: #6F6E6E;
   margin-left: 9px;
 }
-.filter-sort__content {
+.sort__content {
   padding: 7px 30px 11px 9px;
   position: absolute;
   z-index: 1;
