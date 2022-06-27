@@ -55,10 +55,12 @@ a
     text-decoration: none
     color: #000000
 
+// class for centering the content
 .center
     padding-left: calc(50% - 570px)
     padding-right: calc(50% - 570px)
 
+// styles of index page
 .header
     background: #222222
     display: flex
@@ -91,6 +93,8 @@ a
     width: 232px
     background: #FFFFFF
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    &__nav-links
+        display: none
     &__heading
         font-style: normal
         font-weight: 700
@@ -254,6 +258,7 @@ a
             background-color: $siteColor
             color: #FFFFFF
 
+// reusable product class
 .product
     position: relative
     display: flex
@@ -475,6 +480,7 @@ a
         & i
             color: #FFFFFF
 
+// styles of catalog page
 .page-heading
     display: flex
     padding-top: 60px
@@ -557,6 +563,8 @@ a
         position: absolute
         box-sizing: border-box
         width: 100%
+        &_mobile
+            display: none
     &__details[open]
         background: #FFFFFF
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
@@ -606,10 +614,14 @@ a
         &:hover
             cursor: pointer
             color: $siteColor
-.sort
-    position: relative
-    padding: 0
-    width: fit-content
+
+    .sort
+        position: relative
+        padding: 0
+        width: fit-content
+    &[open]
+        background: none
+        box-shadow: none
     &__sizes
         font-style: normal
         font-weight: 400
@@ -627,6 +639,7 @@ a
         left: -9px
         top: 22px
 
+// styles of product page
 .focus-product
     background-image: url(./img/product-woman.png)
     background-position: center
@@ -654,6 +667,8 @@ a
     box-sizing: border-box
     margin-top: -65px
     background-color: #FFFFFF
+    &__details
+        position: relative
     &__mid-line
         width: 642px
         border-top: 1px solid #EAEAEA
@@ -736,7 +751,8 @@ a
 
 .quantity-input
     display: inline-block
-    position: relative
+    position: absolute
+    right: 0
     width: 100px
     &__input
         display: block
@@ -774,6 +790,7 @@ a
     font-size: 16px
     font-weight: 600
 
+// styles of cart page
 .product-container
     display: flex
     justify-content: center
@@ -940,7 +957,7 @@ a
             line-height: 22px
             color: #656565
             border: 1px solid #EAEAEA
-            max-width: 22px
+            max-width: 24px
             text-align: center
             &::-webkit-outer-spin-button
                 appearance: none
@@ -967,6 +984,8 @@ a
             font-size: 22px
             line-height: 26px
             color: #575757
+
+// styles of registration page
 .registration-content
     display: flex
     padding-top: 64px
@@ -1071,4 +1090,7 @@ a
                 &::marker
                     margin-right: 22px
 
+// importing media rules
 @import 'tablet'
+@import 'mobile'
+@import 'mobile375'

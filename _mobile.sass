@@ -1,0 +1,171 @@
+@media (max-width: 767px)
+    .center
+        padding-left: 16px
+        padding-right: 16px
+    .header__nav-links
+        display: none
+    .menu-box
+        &__nav-links
+            display: flex
+            align-items: center
+            border: 1px solid #ccc
+            border-radius: 10px
+            box-sizing: border-box
+            padding: 8px
+            justify-content: center
+            gap: 30px
+            margin-bottom: 16px
+        &__checkbox:checked ~ .menu-box
+            width: 100%
+    .main-info
+        height: 375px
+        &__contents
+            justify-content: center
+            width: 100%
+        &__img
+            display: none
+        &__text__title
+            font-size: 38px
+            line-height: 46px
+        &__text__subtitle
+            font-size: 20px
+            line-height: 24px
+    .info-cards
+        grid-template-columns: repeat(1, 1fr)
+    .card
+        &-big img
+            min-height: 111px
+            object-fit: cover
+        &__img
+            width: 100%
+    .featured-items
+        margin-bottom: 64px
+        &__carousel-box
+            gap: 18px
+        &__cards
+            padding-bottom: 40px
+    .footer
+        flex-direction: column-reverse
+        gap: 40px
+    .subscribe
+        &__quote
+            font-size: 18px
+            line-height: 22px
+        &__info
+            width: 340px
+    .subscribe-button
+        &__email
+            padding: 16px 21px 14px 21px
+        &__button
+            padding: 16px 18px 14px 18px
+        &__heading
+            font-size: 24px
+            line-height: 37px
+        &__sunheading
+            font-size: 14px
+            line-height: 21px
+    .page-heading
+        flex-direction: column
+        gap: 32px
+        padding-top: 24px
+        padding-bottom: 46px
+    .filter-sort
+        &__content
+            padding-top: 8px
+        &__subdetails
+            padding: 16px
+        &__filter
+            height: 25px
+        &__subsummary
+            margin-top: 0
+        &__summary
+            &_mobile
+                font-size: 12px
+                line-height: 14px
+        &__details
+            display: none
+            &_mobile
+                display: block
+                z-index: 5
+                position: absolute
+            &_mobile[open]
+                background: #FFFFFF
+                box-shadow: 6px 4px 35px rgb(0 0 0 / 21%)
+    .sort
+        width: max-content
+        &[open]
+            background: none
+            box-shadow: none
+        &__content_mobile
+            width: 45px
+            padding-right: 11px
+        &_mobile
+            position: relative
+    .product-cart
+        min-width: unset
+        max-width: 358px
+        height: 168px
+        & img
+            object-fit: contain
+            max-width: 144px
+        &__description
+            padding: 14px 53px 34px 17px
+            &__quantity-amount
+                box-sizing: border-box
+                font-size: 10px
+                line-height: 12px
+                padding: 1px 6px 2px 6px
+            &__header
+                margin-bottom: 26px
+                font-size: 16px
+                line-height: 19px
+            &__text
+                font-size: 14px
+                line-height: 17px
+    .cart-content
+        &__buttons
+            gap: 9px
+            &__reset
+                font-size: 12px
+                line-height: 14px
+                padding: 9px
+                font-weight: 400
+                box-sizing: border-box
+                width: 175px
+                text-align: center
+            &__continue-shopping
+                font-size: 12px
+                line-height: 14px
+                padding: 9px
+                font-weight: 400
+                box-sizing: border-box
+                width: 175px
+                text-align: center
+        &__form
+            flex-direction: column
+            align-items: center
+            &__total-money
+                display: flex
+                flex-direction: column
+                &__button-checkout
+                    width: 100%
+                    font-weight: 300
+                    font-size: 16px
+                    line-height: 19px
+    .subscribe
+        &__quote
+            font-size: 18px
+            line-height: 22px
+    .subscribe-button
+        &__heading
+            line-height: 37px
+        &__subheading
+            font-size: 14px
+            line-height: 21px
+    .registration-content
+        flex-direction: column
+        gap: 40px
+        &__form-content
+            width: 100%
+        &__text
+            margin-left: 0
