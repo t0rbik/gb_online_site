@@ -34,7 +34,7 @@ function addToBasket(id, name, price) {
   }
   basket[id].count++;
   cartIconCounterEl.textContent = getTotalNumberProducts().toString();
-  basketTotalValueEl.textContent = getTotalPrice();
+  basketTotalValueEl.textContent = getTotalPrice().toFixed(2);
   renderBasketProduct(id);
 }
 
@@ -63,9 +63,9 @@ function renderBasketProduct(id) {
   basketRowEl.querySelector(
     ".productCount"
   ).textContent = `${productData.count} шт.`;
-  basketRowEl.querySelector(".productTotalPrice").textContent = `$${
+  basketRowEl.querySelector(".productTotalPrice").textContent = `$${(
     productData.count * productData.price
-  }`;
+  ).toFixed(2)}`;
 }
 
 function renderNewProductInBasket(id) {
@@ -74,7 +74,9 @@ function renderNewProductInBasket(id) {
   <div>${basket[id].name}</div>
   <div class="productCount">${basket[id].count} шт.</div>
   <div>$${basket[id].price}</div>
-  <div class="productTotalPrice">$${basket[id].price * basket[id].count}</div>
+  <div class="productTotalPrice">$${(
+    basket[id].price * basket[id].count
+  ).toFixed(2)}</div>
 </div>
     `;
   basketTotalEl.insertAdjacentHTML("beforebegin", productElHtml);
