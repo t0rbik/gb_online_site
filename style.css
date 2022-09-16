@@ -103,6 +103,10 @@ a {
   color: #000000;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .center {
   padding-left: calc(50% - 570px);
   padding-right: calc(50% - 570px);
@@ -127,9 +131,71 @@ a {
   flex-direction: row;
   align-items: center;
   gap: 33px;
+  position: relative;
 }
 .header__right__menu-label:hover {
   cursor: pointer;
+}
+
+.cartIconWrap {
+  position: relative;
+}
+.cartIconWrap:hover {
+  cursor: pointer;
+}
+.cartIconWrap span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  color: white;
+  background: #f16d7f;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  right: -8px;
+  top: -19px;
+  font-size: 12px;
+  line-height: 19px;
+}
+
+.basket {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 37px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+@media (min-width: 340px) {
+  .basket {
+    font-size: 16px;
+  }
+}
+@media (min-width: 552px) {
+  .basket {
+    width: 500px;
+  }
+}
+.basketRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 10px;
+}
+
+.basketHeader {
+  font-weight: bold;
+}
+
+.basketTotal {
+  font-weight: bold;
+  text-align: right;
 }
 
 .menu-box {
@@ -1328,7 +1394,6 @@ a {
     padding-left: calc(50% - 368px);
     padding-right: calc(50% - 368px);
   }
-
   .main-info__text {
     margin-top: 0;
   }
@@ -1344,41 +1409,34 @@ a {
     display: flex;
     align-items: center;
   }
-
   .info-cards {
     gap: 19px;
   }
-
   .featured-items__cards {
     gap: 16px;
   }
-
   .advantages {
     flex-direction: column;
     padding-top: 48px;
     gap: 48px;
     padding-bottom: 64px;
   }
-
   .subscribe {
     flex-direction: column;
     gap: 48px;
     padding-top: 64px;
     padding-bottom: 140px;
   }
-
   .product-container {
     margin-bottom: 16px;
   }
   .product_tablet-no-display {
     display: none;
   }
-
   .focus-product-description {
     width: 100%;
     margin-top: 0;
   }
-
   .cart-content {
     flex-direction: column;
     gap: 64px;
@@ -1402,7 +1460,6 @@ a {
   .cart-content__form__quote {
     width: 360px;
   }
-
   .registration-content__text {
     margin-left: 22px;
   }
@@ -1428,11 +1485,9 @@ a {
     padding-left: 16px;
     padding-right: 16px;
   }
-
   .header__nav-links {
     display: none;
   }
-
   .menu-box__nav-links {
     display: flex;
     align-items: center;
@@ -1447,7 +1502,6 @@ a {
   .menu-box__checkbox:checked ~ .menu-box {
     width: 100%;
   }
-
   .main-info {
     height: 375px;
   }
@@ -1466,11 +1520,9 @@ a {
     font-size: 20px;
     line-height: 24px;
   }
-
   .info-cards {
     grid-template-columns: repeat(1, 1fr);
   }
-
   .card-big img {
     min-height: 111px;
     -o-object-fit: cover;
@@ -1479,7 +1531,6 @@ a {
   .card__img {
     width: 100%;
   }
-
   .featured-items {
     margin-bottom: 64px;
   }
@@ -1489,12 +1540,10 @@ a {
   .featured-items__cards {
     padding-bottom: 40px;
   }
-
   .footer {
     flex-direction: column-reverse;
     gap: 40px;
   }
-
   .subscribe__quote {
     font-size: 18px;
     line-height: 22px;
@@ -1502,7 +1551,6 @@ a {
   .subscribe__info {
     width: 340px;
   }
-
   .subscribe-button__email {
     padding: 16px 21px 14px 21px;
   }
@@ -1517,14 +1565,12 @@ a {
     font-size: 14px;
     line-height: 21px;
   }
-
   .page-heading {
     flex-direction: column;
     gap: 32px;
     padding-top: 24px;
     padding-bottom: 46px;
   }
-
   .filter-sort__content {
     padding-top: 8px;
   }
@@ -1553,7 +1599,6 @@ a {
     background: #FFFFFF;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
   }
-
   .sort {
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -1570,7 +1615,6 @@ a {
   .sort_mobile {
     position: relative;
   }
-
   .product-cart {
     min-width: unset;
     max-width: 358px;
@@ -1599,7 +1643,6 @@ a {
     font-size: 14px;
     line-height: 17px;
   }
-
   .cart-content__buttons {
     gap: 9px;
   }
@@ -1635,12 +1678,10 @@ a {
     font-size: 16px;
     line-height: 19px;
   }
-
   .subscribe__quote {
     font-size: 18px;
     line-height: 22px;
   }
-
   .subscribe-button__heading {
     line-height: 37px;
   }
@@ -1648,7 +1689,6 @@ a {
     font-size: 14px;
     line-height: 21px;
   }
-
   .registration-content {
     flex-direction: column;
     gap: 40px;
@@ -1668,15 +1708,12 @@ a {
   .featured-items__cards {
     grid-template-columns: repeat(1, 1fr);
   }
-
   .subscribe__info {
     max-width: 280px;
   }
-
   .product {
     max-width: 288px;
   }
-
   .registration-content {
     padding-left: 8px;
     padding-right: 8px;
@@ -1688,13 +1725,11 @@ a {
     width: -moz-fit-content;
     width: fit-content;
   }
-
   .product-cart__description__quantity-amount {
     margin-left: 2px;
     padding: 0;
     max-width: 12px;
   }
-
   .cart-content__buttons__reset {
     width: 140px;
   }

@@ -55,6 +55,9 @@ a
     text-decoration: none
     color: #000000
 
+.hidden
+    visibility: hidden
+
 // class for centering the content
 .center
     padding-left: calc(50% - 570px)
@@ -79,8 +82,58 @@ a
         flex-direction: row
         align-items: center
         gap: 33px
+        position: relative
         &__menu-label:hover
             cursor: pointer
+
+
+.cartIconWrap 
+    position: relative
+    &:hover
+        cursor: pointer
+    & span
+        display: inline-block
+        width: 19px
+        height: 19px
+        color: white
+        background: #f16d7f
+        border-radius: 50%
+        position: absolute
+        text-align: center
+        right: -8px
+        top: -19px
+        font-size: 12px
+        line-height: 19px
+
+
+.basket
+    position: absolute
+    z-index: 3
+    right: 0
+    top: 37px
+    background: white
+    padding: 10px
+    border: 1px solid #ebebeb
+    border-radius: 3px
+    font-size: 14px
+@media (min-width: 340px)
+    .basket
+        font-size: 16px
+@media (min-width: 552px)
+    .basket
+        width: 500px
+.basketRow
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 10px
+    margin-bottom: 10px
+    border-bottom: 1px solid #ebebeb
+    padding-bottom: 10px
+.basketHeader
+    font-weight: bold
+.basketTotal 
+    font-weight: bold
+    text-align: right
 
 .menu-box
     z-index: 10
